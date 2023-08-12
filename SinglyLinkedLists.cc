@@ -163,8 +163,8 @@ return 0;
 // inserting before or after a specific given node (done)
 // displaying/traversing a list (done)
 // reversing a list (done)
-// deleting first/last node
-// deleting a specific node
-// searching for a node with a specific value
+// deleting first/last node (done)
+// deleting a specific node (done)
+// searching for a node with a specific value (done)
 // retrieving the value of the specifc node
 // find the position of a specific value
