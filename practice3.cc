@@ -63,7 +63,7 @@ void InsertBegin(int value) {
   }
 }
 
-void InsertMiddle(int value, int position) {
+void InsertPos(int value, int position) {
   Node* new_node = new Node();
   new_node->data = value;
   // i have to traverse through the list
@@ -106,11 +106,46 @@ void DisplayList() {
   }
 }
 
+void DeleteBegin() {
+  Node* temp = head;
+  head = temp->next;
+  delete temp;
+}
+
+void DeleteEnd() {
+  Node* temp = head;
+  /*
+  let's say i have a list like this 1->2->3->nullptr and I want it to become 1->2->nullptr, I would want to traverse
+  through the list until i reach right before a node whose next pointer is nullptr. In this case, I want to stop once i reach
+  the node with value 2 because once i exit out of the loop, I want to make 2 point at nullptr instead of 3.
+  */
+  while (temp->next->next != nullptr) {
+    temp = temp->next;
+  }
+  temp->next = nullptr; //following with the example above, this makes 2 points at nullptr
+  delete temp;
+}
+
+void DeletePos(int position) {
+  // in order for me to delete anode from the middle, the node must have at least 2 nodes
+  if (head->next == nullptr || position == 1) {
+    std::cout << "list must have at least 2 nodes in order to pop something\n";
+    return;
+  }
+  Node* temp = head;
+  for (int i = 2; i < position; i++) {
+    temp = temp->next;
+  }
+  temp->next = temp->next->next;
+  delete temp;
+}
 
 // inserting at begin (done)
-// inserting at middle (done)
+// inserting at specific position (done)
 // inserting at end (done)
-// deleting in a linked list
+// deleting at begin (done)
+// deleting at specific position (done)
+// deleting at end (done)
 // reversing a linked list
 // merging 2 sorted lists
 // intersection of 2 linked lists
@@ -132,8 +167,17 @@ int main() {
   InsertBegin(5);
   InsertBegin(4);
   InsertBegin(3);
-  InsertMiddle(9, 1);
+  InsertPos(9, 1);
   InsertEnd(100);
+  DisplayList();
+  std::cout << "-------\n";
+  DeleteBegin();
+  DisplayList();
+  std::cout << "-------\n";
+  DeleteEnd();
+  DisplayList();
+  std::cout << "-------\n";
+  DeletePos(3);
   DisplayList();
 
   return 0;
