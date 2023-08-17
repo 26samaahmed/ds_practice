@@ -11,7 +11,7 @@ Node* front = nullptr;
 Node* back = nullptr;
 
 
-// inserting an element in a queue using linked lists
+// inserting an element in a linked list using queues
 void Insert(int value) {
   // we start by checking if the list is empty. Since we are inserting from the back side, check if back is equal to nullptr
   if (back == nullptr) {
