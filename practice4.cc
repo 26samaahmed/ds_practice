@@ -1,13 +1,5 @@
 #include <iostream>
 
-// reversing a linked list
-// merging 2 sorted lists
-// intersection of 2 linked lists
-// checking if a linked list is a palindrome
-// doubly list delete at beginning
-// doubly list delete at specifc position
-// doubly list delete at end
-
 struct Node {
   int data;
   Node* next;
