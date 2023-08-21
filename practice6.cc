@@ -54,7 +54,7 @@ void InsertQueue(int value) {
     new_node->next = nullptr;
     // traverse through the whole list until i reach the last node which points at nullptr so i can make it point at the new node instead
     Node* temp = front;
-    for (temp->next != nullptr) {
+    while (temp->next != nullptr) {
       temp = temp->next;
     }
     // once the loop terminates, that means we reached the last node
@@ -70,6 +70,36 @@ void InsertQueue(int value) {
 
 
 // deleting in a queue
+void DeleteQueue() {
+  // first check if the list is empty, because if it is, then no node can be deleted.
+  if (front == nullptr) {
+    std::cout << "the list is empty so nothing can be popped.\n";
+    return;
+  }
+  // check if there is only 1 node, because that means the front and back are equal
+  if (front == back) {
+    std::cout << "there is only 1 node so it will be popped\n"; // for testing purposes
+    delete front;
+    front = nullptr;
+    back = nullptr;
+    return;
+  }
+
+  // if the list is not empty, then i will start by storing a copy of the original first node
+  Node* temp = front;
+  front = front->next; // so the second node now becomes the front node
+  delete temp; // delete the original first node
+}
+
+// Displaying the list
+void Display() {
+  Node* temp = front;
+  while (temp != nullptr) {
+    std::cout << " " << temp->data;
+    temp = temp->next;
+  }
+  std::cout << "\n";
+}
 
 int main() {
   // test cases
@@ -77,4 +107,24 @@ int main() {
   Reverse("nn");
   Reverse("c");
   Reverse("");
+  std::cout << "---\n";
+
+  InsertQueue(1);
+  InsertQueue(2);
+  InsertQueue(3);
+  InsertQueue(4);
+  DeleteQueue();
+  Display();
+  std::cout << "---\n";
+
+  // test case: list has no nodes
+  DeleteQueue();
+  Display();
+  std::cout << "---\n";
+
+  // test case: if there is only 1 node
+  InsertQueue(1);
+  DeleteQueue();
+  Display();
+
 }
