@@ -1,10 +1,9 @@
 #include <iostream>
 #include<stack>
-// merging 2 sorted lists
 // intersection of 2 linked lists
 // checking if a linked list is a palindrome
-// practice stacks and queues
 // big o notation
+// merging 2 sorted lists
 
 // reversing a word using stack
 void Reverse(std::string word) {
@@ -100,6 +99,7 @@ void Display() {
   }
   std::cout << "\n";
 }
+
 
 int main() {
   // test cases
