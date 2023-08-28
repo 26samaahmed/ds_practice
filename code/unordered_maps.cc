@@ -2,6 +2,7 @@
 #include<unordered_map>
 #include<iterator>
 
+// in progress
 /*
 Exercise 2: Word Frequency Counter
 Create a program that reads a paragraph of text and uses an unordered map to count the frequency of each word. Ignore punctuation and consider words 
