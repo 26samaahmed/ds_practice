@@ -83,6 +83,9 @@
     "*.tcc": "cpp",
     "memory_resource": "cpp",
     "stop_token": "cpp",
-    "thread": "cpp"
+    "thread": "cpp",
+    "__tree": "cpp",
+    "map": "cpp",
+    "filesystem": "cpp"
   }
 }
